@@ -7,6 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>hello</h1>
+<center>
+<h2>Hello, this is default page, and now is</h2>
+	<h2>${time}</h2>
+<br>
+	<h1>
+		<a href="create">Create new user</a>
+	</h1>
+<br>
+<div style="display:table; text-align:left;">
+	<h2>System info:</h2>
+	<h2>OS:${osname}</h2>
+	<h2>Ver:${osver}</h2>
+	<h2>Arch:${osarch}</h2>
+</div>
+</center>
 </body>
 </html>
