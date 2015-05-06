@@ -22,6 +22,13 @@ public class springTutorialController {
 		return model;
 	}
 	
+	@RequestMapping(value="/welcome/{path}")
+	public ModelAndView helloAgain(@PathVariable("path") String path) {
+		ModelAndView model = new ModelAndView("helloUser");
+		model.addObject("path", path);
+		return model;
+	}
+	
 	@RequestMapping(value="/welcome", method = RequestMethod.POST)
 	public ModelAndView hello(@RequestParam("name") String name, @RequestParam("password") String password) {
 		ModelAndView model = new ModelAndView("helloUser");
