@@ -21,6 +21,7 @@
 	<h2>Ver:${osver}</h2>
 	<h2>Arch:${osarch}</h2>
 </div>
+${time}
 </center>
 </body>
 </html>
