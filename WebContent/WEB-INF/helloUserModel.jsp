@@ -16,9 +16,12 @@
 			I can call to you by number <font color="orange">${newUser.mobileNumber}</font>.<br>
 			And your skills is <font color="skyblue">${newUser.skills}</font>!<br>
 		</h3>
+		<p>
+		${time}
+		<br>
+		${time2}
+		<br>
+		${time3}
 	</div>
-${time}
-${time2}
-${time3}
 </body>
 </html>

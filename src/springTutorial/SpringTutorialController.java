@@ -1,10 +1,15 @@
 package springTutorial;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +19,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SpringTutorialController {
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		//binder.setDisallowedFields("mobileNumber"); //Exclude the field from data binding
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+		binder.registerCustomEditor(Date.class, "dateOfBirth", new CustomDateEditor(dateFormat, false));
+		binder.registerCustomEditor(String.class, "name", new CustomNameEditor());
+	}
+	
 	//mapping for the default root page
 	@RequestMapping("/")
 	public ModelAndView index() {
@@ -51,7 +65,7 @@ public class SpringTutorialController {
 	@RequestMapping(value="/create"/*, method = RequestMethod.POST*/)
 	public ModelAndView create() {
 		ModelAndView model = new ModelAndView("createUser");
-		model.addObject("message","You are creating new user.");
+		model.addObject("message","You are creating a new user.");
 		return model;
 	}	
 	

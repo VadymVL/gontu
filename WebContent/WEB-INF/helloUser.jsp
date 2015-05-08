@@ -14,7 +14,8 @@
 				Your password is <font color="green">${password}</font>.
     		<%}%>
 		</h3>
+		<p>
+		${time}
 	</div>
-${time}
 </body>
 </html>

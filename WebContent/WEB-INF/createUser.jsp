@@ -6,6 +6,17 @@
 	Spring MVC!
 </title>
 
+<head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker({dateFormat: 'dd.mm.yy'});
+  });
+  </script>
+</head>
+
 <body>
 <div align="center">
 	<h1>${message}</h1>
@@ -18,7 +29,7 @@
 				<br>
 				<input type="text" placeholder="Mobile number" name="mobileNumber"></input>
 				<br>
-				<input type="text" placeholder="Date birth mm/dd/yyyy" name="dateOfBirth"></input>
+				<input type="text" placeholder="Date birth dd.mm.yyyy" name="dateOfBirth" id="datepicker"></input>
 				<br>
 				Your skills:
 				<br>
@@ -35,8 +46,8 @@
 				<br>
 			</form>
 		</fieldset>
+	<p>
+	${time}
 </div>
-<p>
-${time}
 </body>
 </html>
