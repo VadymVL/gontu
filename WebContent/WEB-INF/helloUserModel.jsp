@@ -12,8 +12,8 @@
 		<h3>
    			Hello new user, <font color="blue">${newUser.name}</font>!<br>
 			Your password is <font color="green">${newUser.password}</font>.<br>
-			You have born <font color="maroon">${newUser.dateOfBirth}</font>.<br>
-			I can call to you by number <font color="orange">${newUser.mobileNumber}</font>.<br>
+			You have born at <font color="maroon">${newUser.dateOfBirth}</font>.<br>
+			I can call you by number <font color="orange">${newUser.mobileNumber}</font>.<br>
 			And your skills is <font color="skyblue">${newUser.skills}</font>!<br>
 		</h3>
 		<p>

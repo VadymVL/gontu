@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,7 +72,7 @@ public class SpringTutorialController {
 	}	
 	
 	@RequestMapping(value="/welcome/model", method = RequestMethod.POST)
-	public ModelAndView hello2(@ModelAttribute("newUser") UserModel newUser, BindingResult result) {
+	public ModelAndView hello2(@Valid @ModelAttribute("newUser") UserModel newUser, BindingResult result) {
 		
 		if(result.hasErrors()) {
 			ModelAndView model1 = new ModelAndView("createUser");
