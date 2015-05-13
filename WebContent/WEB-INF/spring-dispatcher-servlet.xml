@@ -15,6 +15,13 @@
 	<context:component-scan base-package="springTutorial" />
 	<mvc:annotation-driven/>
 	
+	<mvc:interceptors>
+		<mvc:interceptor>
+		<mvc:mapping path="/create"/>
+		<bean class="springTutorial.CustomInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
 		
@@ -32,7 +39,7 @@
 		class = "org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		
 		<property name="basename" value="/WEB-INF/usermessages"/>
-		<property name="cacheSseconds" value="1"/> <!-- DON'T USE IT IN PRODUCTION ONLY IN DEBUG! -->
+		<property name="cacheSeconds" value="1"/> <!-- DON'T USE IT IN PRODUCTION ONLY IN DEBUG! -->
 	</bean>
 	
 </beans>
