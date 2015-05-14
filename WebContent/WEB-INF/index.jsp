@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,5 +25,17 @@
 </div>
 ${time}
 </center>
+
+<span style="float: right">
+    <a href="?lang=en">en</a> 
+    <a href="?lang=ru">ru</a>
+    <a href="?lang=uk">uk</a> 
+    <a href="?lang=ua">ua</a>
+</span>
+<p><spring:message code="label.registration"/></p>
+<p><spring:message code="label.login"/></p>
+
+
+
 </body>
 </html>
